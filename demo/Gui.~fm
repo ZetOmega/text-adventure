@@ -1,10 +1,10 @@
 object Gui: TFGUIForm
-  Left = 282
-  Top = 161
+  Left = 350
+  Top = 1
   BorderIcons = [biSystemMenu]
   Caption = 'Gui'
-  ClientHeight = 670
-  ClientWidth = 1014
+  ClientHeight = 529
+  ClientWidth = 568
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,10 +18,8 @@ object Gui: TFGUIForm
   Visible = True
   OnClose = FormClose
   OnCloseQuery = FormCloseQuery
-  OnMouseActivate = FormMouseActivate
   OnResize = FormResize
   FrameType = 5
-  Modified = True
   Resizable = False
   Undecorated = False
   Background = clBtnFace
@@ -29,7 +27,7 @@ object Gui: TFGUIForm
   TextHeight = 13
   object jlTitel: TJLabel
     Tag = 1
-    Left = 456
+    Left = 8
     Top = 8
     Width = 257
     Height = 23
@@ -52,8 +50,8 @@ object Gui: TFGUIForm
   end
   object jlName: TJLabel
     Tag = 1
-    Left = 16
-    Top = 304
+    Left = 8
+    Top = 40
     Width = 222
     Height = 20
     Hint = 'jLabel1'
@@ -75,8 +73,8 @@ object Gui: TFGUIForm
   end
   object jtfName: TJTextField
     Tag = 2
-    Left = 240
-    Top = 304
+    Left = 232
+    Top = 40
     Width = 150
     Height = 20
     Cursor = crIBeam
@@ -94,8 +92,8 @@ object Gui: TFGUIForm
   end
   object jbStart: TJButton
     Tag = 4
-    Left = 832
-    Top = 200
+    Left = 392
+    Top = 40
     Width = 163
     Height = 25
     Hint = 'jButton1'
@@ -138,8 +136,8 @@ object Gui: TFGUIForm
   end
   object jbEnde: TJButton
     Tag = 4
-    Left = 832
-    Top = 232
+    Left = 392
+    Top = 72
     Width = 163
     Height = 25
     Hint = 'jButton1'
@@ -182,10 +180,10 @@ object Gui: TFGUIForm
   end
   object jtaAnzeige: TJTextArea
     Tag = 3
-    Left = 440
-    Top = 144
+    Left = 8
+    Top = 104
     Width = 377
-    Height = 337
+    Height = 385
     Cursor = crIBeam
     Hint = 'jTextArea1'
     Font.Charset = DEFAULT_CHARSET
@@ -204,7 +202,7 @@ object Gui: TFGUIForm
   end
   object jlLP: TJLabel
     Tag = 1
-    Left = 288
+    Left = 8
     Top = 72
     Width = 189
     Height = 20
@@ -227,7 +225,7 @@ object Gui: TFGUIForm
   end
   object jlLPAnzeige: TJLabel
     Tag = 1
-    Left = 480
+    Left = 200
     Top = 72
     Width = 62
     Height = 20
@@ -250,8 +248,8 @@ object Gui: TFGUIForm
   end
   object jlBefehl: TJLabel
     Tag = 1
-    Left = 40
-    Top = 624
+    Left = 8
+    Top = 496
     Width = 102
     Height = 20
     Hint = 'jLabel1'
@@ -273,8 +271,8 @@ object Gui: TFGUIForm
   end
   object jtfBefehl: TJTextField
     Tag = 2
-    Left = 144
-    Top = 624
+    Left = 112
+    Top = 496
     Width = 270
     Height = 20
     Cursor = crIBeam
@@ -292,8 +290,8 @@ object Gui: TFGUIForm
   end
   object jbEingabe: TJButton
     Tag = 4
-    Left = 424
-    Top = 624
+    Left = 392
+    Top = 496
     Width = 75
     Height = 25
     Hint = 'jButton1'
@@ -336,8 +334,8 @@ object Gui: TFGUIForm
   end
   object jBNord: TJButton
     Tag = 4
-    Left = 936
-    Top = 568
+    Left = 416
+    Top = 416
     Width = 27
     Height = 25
     Hint = 'jButton1'
@@ -380,8 +378,8 @@ object Gui: TFGUIForm
   end
   object jbOst: TJButton
     Tag = 4
-    Left = 952
-    Top = 592
+    Left = 432
+    Top = 440
     Width = 27
     Height = 25
     Hint = 'jButton1'
@@ -424,8 +422,8 @@ object Gui: TFGUIForm
   end
   object jbSued: TJButton
     Tag = 4
-    Left = 936
-    Top = 616
+    Left = 416
+    Top = 464
     Width = 27
     Height = 25
     Hint = 'jButton1'
@@ -468,8 +466,8 @@ object Gui: TFGUIForm
   end
   object jbWest: TJButton
     Tag = 4
-    Left = 920
-    Top = 592
+    Left = 400
+    Top = 440
     Width = 27
     Height = 25
     Hint = 'jButton1'
@@ -512,8 +510,8 @@ object Gui: TFGUIForm
   end
   object jlBewegung: TJLabel
     Tag = 1
-    Left = 912
-    Top = 544
+    Left = 392
+    Top = 392
     Width = 78
     Height = 20
     Hint = 'jLabel1'
@@ -525,44 +523,6 @@ object Gui: TFGUIForm
     Foreground = clWindowText
     Background = clBtnFace
     Text = 'Gehe nach...'
-    HorizontalAlignment = LEFT
-    VerticalAlignment = CENTER
-    HorizontalTextPosition = RIGHT
-    VerticalTextPosition = CENTER
-    IconTextGap = 4
-    DisplayedMnemonic = 0
-    DisplayedMnemonicIndex = 0
-  end
-  object canvas1: TACanvas
-    Tag = -13
-    Left = 8
-    Top = 40
-    Width = 185
-    Height = 153
-    Hint = 'canvas1'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Dialog'
-    Font.Style = []
-    Foreground = 3355443
-    Background = clBtnFace
-  end
-  object jLabel1: TJLabel
-    Tag = 1
-    Left = 8
-    Top = 8
-    Width = 185
-    Height = 17
-    Hint = 'jLabel1'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Dialog'
-    Font.Style = [fsBold]
-    Foreground = 3355443
-    Background = clBtnFace
-    Text = 'text'
     HorizontalAlignment = LEFT
     VerticalAlignment = CENTER
     HorizontalTextPosition = RIGHT
