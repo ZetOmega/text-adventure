@@ -6,14 +6,23 @@ public class Raum {
   private List<Gegner> gegner;
   private List<NPC> charaktere;
 
-  public Raum(String pName, String pBeschreibung, List<Raum> pNachbarn, 
-              List<Gegenstand> pVoraussetzungen, List<Gegner> pGegner, List<NPC> pCharaktere) {
+  public Raum(String pName, String pBeschreibung, Gegenstand[] pVoraussetzungen, 
+                     Gegner[] pGegner, NPC[] pCharaktere) {
     name = pName;
     beschreibung = pBeschreibung;
-    nachbarn = pNachbarn;
-    voraussetzungen = pVoraussetzungen;
-    gegner = pGegner;
-    charaktere = pCharaktere;          
+    nachbarn = new List<Raum>();
+    voraussetzungen = new List<Gegenstand>();
+    for(Gegenstand gegenstand : pVoraussetzungen) {
+      voraussetzungen.append(gegenstand);
+    }
+    gegner = new List<Gegner>();
+    for(Gegner neuerGegner : pGegner) {
+      gegner.append(neuerGegner);
+    }
+    charaktere = new List<NPC>();
+    for(NPC npc : pCharaktere) {
+      charaktere.append(npc);
+    }          
   }
 
   public void setzeName(String pName) {
