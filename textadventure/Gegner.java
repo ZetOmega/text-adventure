@@ -43,10 +43,6 @@ public class Gegner extends NPC
         lp -= pSchaden;
     }
     
-    public int greifeAn(){
-        return 0;
-    }
-    
     public int gibLP(){
         return lp;
     }
