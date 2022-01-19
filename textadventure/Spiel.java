@@ -17,7 +17,7 @@ public class Spiel {
       "Buecherei",
       "Lehrerzimmer",
       "Schulhof 3",
-      "14. Bioturm",
+      "Bioturm",
       "Zebra"
     };
     int anzahlRaeume = raumNamen.length;
