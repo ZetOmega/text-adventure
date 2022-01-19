@@ -45,7 +45,7 @@ public class Spiel {
       {}, //3. Sporthalle
       {}, //4. Musik & Kunst 
       {
-        new Gegenstand("5. Aula Schluessel", "Gewaehrt dir Zugang zur 5. Aula"), //5. Aula
+        new Gegenstand("Aula Schluessel", "Gewaehrt dir Zugang zur Aula"), //5. Aula
       }, 
       {}, //6. Mensa
       {}, //7. Schulhof 2
@@ -53,7 +53,7 @@ public class Spiel {
       {}, //9. PZ
       {}, //10. Buecherei
       {
-        new Gegenstand("11. Lehrerzimmer Schluessel", "Gewaehrt dir Zugang zum 11. Lehrerzimmer"), //11. Lehrerzimmer
+        new Gegenstand("Lehrerzimmer Schluessel", "Gewaehrt dir Zugang zum Lehrerzimmer"), //11. Lehrerzimmer
       }, 
       {}, //12. Schulhof 3
       {}, //13. Bioturm
