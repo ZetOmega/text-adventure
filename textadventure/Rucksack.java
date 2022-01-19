@@ -1,40 +1,36 @@
-public class Rucksack{
-
-    List<Gegenstand> inhalt = new List<Gegenstand>();
+public class Rucksack {
+    private int kapazitaet;
+    private List<Gegenstand> items = new List<Gegenstand>();
     
-    public Rucksack(){  
-
+    public Rucksack() {  
+        kapazitaet = 1;
     }
 
-    public Gegenstand gibAktuellesItem()   {
-
-        return inhalt.getContent();
+    public Gegenstand gibAktuellesItem() {
+        return items.getContent();
     }
 
-    public String gibNameAktuellesItem()   {
-
-        return inhalt.getContent().gibName();
+    public String gibNameAktuellesItem() {
+        return items.getContent().gibName();
     }
 
-    public String gibBeschreibungAktuellesItem()   {
-
-        return inhalt.getContent().gibBeschreibung();
+    public String gibBeschreibungAktuellesItem() {
+        return items.getContent().gibBeschreibung();
     }
 
     public void naechstesItem() {
-
-        inhalt.next();
+        items.next();
     }
 
-    public void letztesItem()   {
-
-        inhalt.toLast();
+    public void letztesItem() {
+        items.toLast();
     }
 
     public void neuesItem(String name, String beschreibung)  {
-
-        inhalt.append(new Gegenstand(name, beschreibung) );//TODO fixen
-
+        items.append(new Gegenstand(name, beschreibung));
     }
-    
+
+    public boolean istVoll() {
+        return items.size() >= kapazitaet;
+    }
 }

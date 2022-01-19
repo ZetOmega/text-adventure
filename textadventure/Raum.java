@@ -1,7 +1,7 @@
 public class Raum {
   private String name;
   private String beschreibung;
-  private List<Raum> nachbarn;
+  private Raum[] nachbarn;
   private List<Gegenstand> voraussetzungen;
   private List<Gegner> gegner;
   private List<NPC> charaktere;
@@ -10,7 +10,7 @@ public class Raum {
                      Gegner[] pGegner, NPC[] pCharaktere) {
     name = pName;
     beschreibung = pBeschreibung;
-    nachbarn = new List<Raum>();
+    nachbarn = new Raum[4];
     voraussetzungen = new List<Gegenstand>();
     for(Gegenstand gegenstand : pVoraussetzungen) {
       voraussetzungen.append(gegenstand);
@@ -33,18 +33,14 @@ public class Raum {
     beschreibung = pBeschreibung;
   }
 
-  public void fuegeNachbarnHinzu(List<Raum> pNachbarn) {
-    nachbarn.concat(pNachbarn);
+  public void setzeNachbar(Raum pRaum, int pRichtung) {
+    nachbarn[pRichtung] = pRaum;
   }
 
-  public void setzeNachbar(int pRichtung, Raum pNachbar) {
-    nachbarn.toFirst();
-    int count = pRichtung;
-    while(nachbarn.hasAccess() && count >= 0) {
-      count--;
-      nachbarn.next();
+  public void setzeNachbarn(Raum[] pRaeume, int[] pRichtungen) {
+    for(int i = 0; i < pRaeume.length; i++) {
+      nachbarn[pRichtungen[i]] = pRaeume[i];
     }
-    nachbarn.insert(pNachbar);
   }
 
   public void fuegeVoraussetzungenHinzu(List<Gegenstand> pVoraussetzungen) {
@@ -67,17 +63,12 @@ public class Raum {
     return beschreibung;
   }
 
-  public List<Raum> gibNachbarn() {
+  public Raum[] gibNachbarn() {
     return nachbarn;
   }
 
   public Raum gibNachbar(int pRichtung) {
-    int count = pRichtung;
-    while(nachbarn.hasAccess() && count != 0) {
-      count--;
-      nachbarn.next();
-    }
-    return nachbarn.getContent();
+    return nachbarn[pRichtung];
   }
 
   public List<Gegenstand> gibVoraussetzungen() {
@@ -93,11 +84,17 @@ public class Raum {
   }
 
   public String gibInformationen() {
+    Gegenstand[] voraussetzungenArr = new Gegenstand[voraussetzungen.size()];
+    voraussetzungen.toFirst();
+    for(int i = 0; i < voraussetzungen.size(); i++) {
+      voraussetzungenArr[i] = voraussetzungen.getContent();
+      voraussetzungen.next();
+    }
     String voraussetzungenText = 
     "Voraussetzungen--------------\n";
-    for(int i = 0; i < voraussetzungen.length; i++) {
-      voraussetzungenText += voraussetzungen[i].gibName();
-      if(i < voraussetzungen.length - 1) {
+    for(int i = 0; i < voraussetzungenArr.length; i++) {
+      voraussetzungenText += voraussetzungenArr[i].gibName();
+      if(i < voraussetzungenArr.length - 1) {
         voraussetzungenText += "\n";
       }
     }
@@ -108,10 +105,9 @@ public class Raum {
   }
 
   public String gibNachbarinformationen() {
-    return 
-    nachbarn[0].gibInformationen() + "\n" +
-    nachbarn[1].gibInformationen() + "\n" +
-    nachbarn[2].gibInformationen() + "\n" +
-    nachbarn[3].gibInformationen();
+    return nachbarn[0].gibInformationen() + "\n" +
+           nachbarn[1].gibInformationen() + "\n" +
+           nachbarn[2].gibInformationen() + "\n" +
+           nachbarn[3].gibInformationen() + "\n";
   }
 }

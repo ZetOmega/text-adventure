@@ -1,26 +1,12 @@
+public class Ruestung extends Gegenstand {
+    private int def;
 
-/**
- * Beschreiben Sie hier die Klasse Ruestung.
- * 
- * @author (Ihr Name) 
- * @version (eine Versionsnummer oder ein Datum)
- */
-public class Ruestung extends Gegenstand
-{
-    private int verteidigung;
-
-    /**
-     * Konstruktor für Objekte der Klasse Ruestung
-     */
-    public Ruestung(String pName, String pBeschreibung, int pVerteidigung)
-    {
+    public Ruestung(String pName, String pBeschreibung, int pDef) {
         super(pName, pBeschreibung);
-        verteidigung = pVerteidigung;
+        def = pDef;
     }
 
-    
-    public int gibVerteidigung()
-    {
-        return verteidigung;
+    public int gibVerteidigung() {
+        return def;
     }
 }

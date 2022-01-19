@@ -1,26 +1,12 @@
+public class Waffe extends Gegenstand {
+    private int schaden;
 
-/**
- * Beschreiben Sie hier die Klasse Ruestung.
- * 
- * @author (Ihr Name) 
- * @version (eine Versionsnummer oder ein Datum)
- */
-public class Waffe extends Gegenstand
-{
-    private int angriff;
-
-    /**
-     * Konstruktor für Objekte der Klasse Ruestung
-     */
-    public Waffe(String pName, String pBeschreibung, int pAngriff)
-    {
+    public Waffe(String pName, String pBeschreibung, int pSchaden) {
         super(pName, pBeschreibung);
-        angriff = pAngriff;
+        schaden = pSchaden;
     }
 
-    
-    public int gibAngriff()
-    {
-        return angriff;
+    public int gibSchaden() {
+        return schaden;
     }
 }

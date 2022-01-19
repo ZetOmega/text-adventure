@@ -1,14 +1,12 @@
 public class Spieler {
   private int lp;
-  private int atk;
   private String name;
   private String beschreibung;
   private Ruestung ruestung;
   private Waffe waffe;
   
-  public Spieler(int pLp, int pAtk, String pName, String pBeschreibung) {
+  public Spieler(int pLp, Waffe pWaffe, String pName, String pBeschreibung) {
     lp = pLp;
-    atk = pAtk;
     name = pName;
     beschreibung = pBeschreibung;
     ruestung = null;
@@ -27,16 +25,8 @@ public class Spieler {
     return lp;
   }
 
-  public int machSchaden() {
-    return atk;
-  }
-
-  public void erhoeheAtk(int pStaerke) {
-    atk += pStaerke;
-  }
-
-  public int gibAtk() {
-    return atk;
+  public int gibSchaden() {
+    return waffe.gibSchaden();
   }  
 
   public String gibName() {
