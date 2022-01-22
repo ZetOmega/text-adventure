@@ -22,16 +22,16 @@ public class Spiel {
     };
     int anzahlRaeume = raumNamen.length;
     String[] raumBeschreibungen = {
-      "", //0. Busbahnhof  
-      "", //1. Schulhof 1 
+      "Willkommen in Odenthal! Ich bin der Stonebreaker und ich fuehre dich durch die Welt von Odenthal City.\n Du bist gerade aus dem Bus ausgestiegen und befindest dich nun vor der Schule auf dem Busbahnhof.\n Ich gebe dir zur Hilfe eine Karte, die du wahrscheinlich schon oben links gesehen hast, damit du dich nicht verlaeufst.\n Mit Hilfe der obenstehenden Befehlszeile kannst du deine Aktionen auswaehlen und anschliessend mit dem Button durch einen Klick ausfuehren, wie z.B. jetzt zum Schulhof 1. Wir hoeren uns bestimmt nochmal, bis spaeter.", //0. Busbahnhof  
+      "Herzlichen Glueckwunsch du hast den Schluessel zum Neubau gefunden!\n Jetzt kannst du auch den Neubau erkunden, doch weisst du wo er ist?\n Viel Glueck beim Suchen.", //1. Schulhof 1 
       "", //2. Neubau
       "", //3. Sporthalle
-      "Hier wuetet Sky's Shadow", //4. Musik & Kunst
-      "", //5. Aula
+      "Vorsicht! Sky's Shadow hat dich bemerkt. Besiege ihn um an einen besonderen Gegenstand zu gelangen.\n Doch du musst dich beeilen, denn dein Gegner schiesst zurueck", //4. Musik & Kunst
+      "Ach! Dieser Raum ist immer noch so gross wie frueher ... Huch, was macht denn die Schulleitung hier?\n Galileo Galilei ist anscheinend nicht so erfreut, dass wir ihn stoeren. Pass auf er greift dich an!\n Jetzt zeig der Schulleitung, wer hier der bessere Kaempfer ist!", //5. Aula
       "", //6. Mensa
       "", //7. Schulhof 2
       "", //8. Pavillion
-      "", //9. PZ
+      "Willkommen am wichtigsten Ort, falls ein kleiner Hunger auftritt. Hier gibt es auch Spinde, in denen man seine Sportsachen verstauen kann, doch sag nicht, dass der Schluessel noch auf dem Busbahnhof liegt.\n Ich wuerde mich an deiner Stelle beeilen den Schluessel zu finden, bevor er geklaut wird.", //9. PZ
       "", //10. Buecherei
       "", //11. Lehrerzimmer
       "", //12. Schulhof 3
@@ -87,7 +87,9 @@ public class Spiel {
         "Sky's Shadow Schlagzeuger",
         "Sky's Shadow Geiger"
       }, //4. Musik & Kunst
-      {}, //5. Aula
+      {
+        "Galileo Galilei"
+      }, //5. Aula
       {}, //6. Mensa
       {}, //7. Schulhof 2
       {}, //8. Pavillion
@@ -109,7 +111,9 @@ public class Spiel {
         "Eine Band wie es sie noch nie gegeben hat! Lass dich nicht von den Toenen erschlagen",
         "Eine Band wie es sie noch nie gegeben hat! Lass dich nicht von den Toenen erschlagen"
       }, //4. Musik & Kunst
-      {}, //5. Aula
+      {
+        "Ein uberpuenktlicher und ueberkorrekter Schulleiter, dessen einzige Schwaeche der Verlust seines Terminkalenders waere."
+      }, //5. Aula
       {}, //6. Mensa
       {}, //7. Schulhof 2
       {}, //8. Pavillion
@@ -126,7 +130,7 @@ public class Spiel {
       null, //2. Neubau
       null, //3. Sporthalle
       new Gegenstand("Aula Schluessel", "Gewaehrt dir Zugang zur Aula"),  //4. Musik & Kunst
-      null, //5. Aula
+      new Gegenstand("Lehrerzimmer Schluessel","Gewaehrt dir Zugang zum Lehrerzimmer"), //5. Aula
       null, //6. Mensa
       null, //7. Schulhof 2
       null, //8. Pavillion
