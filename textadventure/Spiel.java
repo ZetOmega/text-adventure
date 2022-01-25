@@ -1,5 +1,6 @@
 public class Spiel {
   private Raum[] raeume;
+  private int aktuellerRaum;
   private Spieler spieler;
   
   public Spiel(String pSpielerName) {
@@ -289,7 +290,30 @@ public class Spiel {
     raeume[13].setzeNachbarn(raumNachbarn[13], new int[]{2, 3});
     raeume[14].setzeNachbarn(raumNachbarn[14], new int[]{2});
 
-    spieler = new Spieler(100, new Waffe("Faeuste", "Schlag sie alle windelweich!", 10), pSpielerName, "Zeig was du kannst");        
+    spieler = new Spieler(100, new Waffe("Faeuste", "Schlag sie alle windelweich!", 10), pSpielerName, "Zeig was du kannst");
+    
+    aktuellerRaum = 0;          
+  }
+  
+  public List<String> gibAktionen() {
+    List<String> aktionen = new List<String>();
+    
+    for(int i = 0; i < raumNachbarn[aktuellerRaum].length; i++) {
+      aktionen.append("Gehe in " + raumNachbarn[aktuellerRaum][i] + ".");
+    }
+    List<Gegner> gegner = raeume[aktuellerRaum].gibGegner();
+    while(gegner.hasAccess()) {
+      aktionen.append("Greife " + (NPC)gegner.getContent().gibName() + " an.");
+      gegner.next();
+    }
+  }
+  
+  public int aktuellerRaum() {
+    return aktuellerRaum;
+  }
+  
+  public void setzeAktuellenRaum(int pNeuerRaum) {
+    aktuellerRaum = pNeuerRaum;  
   }
 }
 
