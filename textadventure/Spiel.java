@@ -315,6 +315,26 @@ public class Spiel {
   public void setzeAktuellenRaum(int pNeuerRaum) {
     aktuellerRaum = pNeuerRaum;  
   }
+  
+  public String kaempfen()  {
+    angSpieler = spieler.gibAngriff;
+    GegnerLp = gegner.gibLp;
+    GegnerLp = GegnerLp - angSpieler;
+    
+    if(gegner.gibLp <= 0 && spieler.gibLp > 0) {
+      return "Spieler hat gewonnen";
+    }
+    else if(gegner.gibLp > 0 && spieler.gibLp <= 0) {
+      return "Gegner hat gewonnen";
+    }
+    else if(gegner.gibLp <= 0 && spieler.gibLp <= 0) {
+      return "Unentschieden";
+    }
+    else{
+      return "Spiel nochmal";
+    }
+    
+  }
 }
 
 /*
@@ -336,3 +356,4 @@ public class Spiel {
       {}, //14. Zebra
   };
 */
+
