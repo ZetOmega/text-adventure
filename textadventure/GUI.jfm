@@ -1,6 +1,6 @@
 object GUI: TFGUIForm
-  Left = 951
-  Top = 17
+  Left = 690
+  Top = 128
   BorderIcons = [biSystemMenu]
   Caption = 'GUI'
   ClientHeight = 711

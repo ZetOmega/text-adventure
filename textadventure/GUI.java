@@ -2,31 +2,27 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
+import java.util.LinkedList;  
+import java.util.List;  
 
-/**
-  *
-  * description
-  *
-  * @version 1.0 from 18.01.2022
-  * @author 
+/** @version 0.2 from 26.01.2022
+  * @philipp.klei 
   */
 
 public class GUI extends JFrame {
-  // Anfang Attribute
   private Canvas displayCanvas = new Canvas();
   private JTextArea storyArea = new JTextArea("");
     private JScrollPane storyAreaScrollPane = new JScrollPane(storyArea);
   private JToolBar jToolBar1 = new JToolBar();
   private JButton ausfuehren = new JButton();
   private JComboBox<String> actionDropdown = new JComboBox<String>();
-    private DefaultComboBoxModel<String> actionDropdownModel = new DefaultComboBoxModel<String>();
   private Canvas minimapCanvas = new Canvas();
   private JList inventarListe = new JList();
     private DefaultListModel inventarListeModel = new DefaultListModel();
     private JScrollPane inventarListeScrollPane = new JScrollPane(inventarListe);
   private JTextArea attributeArea = new JTextArea("");
     private JScrollPane attributeAreaScrollPane = new JScrollPane(attributeArea);
-  // Ende Attribute
+  Spiel spiel = new Spiel("testSpieler");
 
   public GUI (String title) {
     super (title);
@@ -40,7 +36,6 @@ public class GUI extends JFrame {
     setLocation(x, y);
     Container cp = getContentPane();
     cp.setLayout(null);
-    // Anfang Komponenten
     displayCanvas.setBounds(184, 192, 505, 505);
     cp.add(displayCanvas);
     storyAreaScrollPane.setBounds(184, 8, 505, 137);
@@ -56,9 +51,7 @@ public class GUI extends JFrame {
         ausfuehren_ActionPerformed(evt);
       }
     });
-    cp.add(ausfuehren);
-
-    actionDropdown.setModel(actionDropdownModel);
+    cp.add(ausfuehren); 
     actionDropdown.setBounds(184, 153, 406, 28);
     cp.add(actionDropdown);
     minimapCanvas.setBounds(8, 8, 161, 129);
@@ -68,21 +61,23 @@ public class GUI extends JFrame {
     cp.add(inventarListeScrollPane);
     attributeAreaScrollPane.setBounds(8, 153, 161, 28);
     cp.add(attributeAreaScrollPane);
-    // Ende Komponenten
     setResizable(false);
     setVisible(true);
   }
-
-  // Anfang Methoden
-  public void ausfuehren_ActionPerformed(ActionEvent evt) {
-    // TODO hier Quelltext einfügen
-    
+  
+  public void dropdownRefresh(){
+    actionDropdown.removeAllItems()  
+    JComboBox<String> temp = new JComboBox<String>(); /*hier muss: spiel.gibAktionen()*/
+    actionDropdown.add(temp);
   }
-
-  // Ende Methoden
-
-  public static void main(String[] args) {
-    new GUI("GUI");
+  
+  public void ausfuehren_ActionPerformed(ActionEvent evt) {
+    getSelectedItem();
+  }
+  
+  public static void Main(String[] args){
+    GUI gui = new GUI("TextAdenture");
+        
   }
 }
-
+                                                                   
